@@ -1,4 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api');
+const express = require("express");
 
 // replace the value below with the Telegram token you receive from @BotFather
 const token = '2092432478:AAGlPB11svBVW6-H-Ml_jR1B4ZxSEfnkdyQ';
@@ -26,4 +27,13 @@ bot.on('message', (msg) => {
 
   // send a message to the chat acknowledging receipt of their message
   bot.sendMessage(chatId, 'Received your message');
+});
+
+const server = express();
+server.all("/notice", (req, res) => {
+  bot.sendMessage('719328994', 'Received your message');
+});
+server.listen(process.env.PORT || 3000, (err) => {
+   if (err) throw err;
+   console.log(`> Ready on http://localhost:${process.env.PORT}`);
 });
