@@ -30,8 +30,10 @@ bot.on('message', (msg) => {
 });
 
 const server = express();
-server.all("/notice", (req, res) => {
-  bot.sendMessage('719328994', 'Received your message');
+server.all("/msg", (req, res) => {
+  const msg = req.query.msg
+  bot.sendMessage('719328994', msg);
+  return {}
 });
 server.listen(process.env.PORT || 3000, (err) => {
    if (err) throw err;
