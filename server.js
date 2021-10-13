@@ -33,7 +33,7 @@ const server = express();
 server.all("/msg", (req, res) => {
   const msg = req.query.msg
   bot.sendMessage('719328994', msg);
-  return {}
+  res.end();
 });
 server.listen(process.env.PORT || 3000, (err) => {
    if (err) throw err;
