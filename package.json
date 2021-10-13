@@ -1,0 +1,11 @@
+{
+  "name": "telbot",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo test"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "0.54.0"
+  }
+}
